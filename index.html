@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="js/materialize.js"></script>
     <title>GPS Sample</title>
   </head>
    <body>
-   <input type="button" value="wikishootmeに行く！" onclick="gate();">
+   <div id="send-button">
+      <a class="waves-effect waves-light btn-large z-depth-4">wikishootmeに行く！</a>
+   </div>
       <script type="text/javascript">
-      function gate(){      
+      document.getElementById("send-button").onclick = function() {      
       // ユーザーの端末がGeoLocation APIに対応しているかの判定
       // 対応している場合
       if( navigator.geolocation )
@@ -68,7 +73,7 @@
                alert( errorMessage ) ;
 
                // HTMLに書き出し
-               document.getElementById("result").innerHTML = errorMessage;
+               //document.getElementById("result").innerHTML = errorMessage;
             } ,
 
             // [第3引数] オプション
@@ -91,7 +96,7 @@
          alert( errorMessage ) ;
 
          // HTMLに書き出し
-         document.getElementById( 'result' ).innerHTML = errorMessage ;
+        // document.getElementById( 'result' ).innerHTML = errorMessage ;
       }
       }
 
